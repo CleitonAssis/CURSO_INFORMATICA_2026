@@ -1,2 +1,2 @@
-# curso_informatica_2026
-Curso de Informática 
+# CURSO_INFORMATICA_2026
+Curso Técnico de Informática 
