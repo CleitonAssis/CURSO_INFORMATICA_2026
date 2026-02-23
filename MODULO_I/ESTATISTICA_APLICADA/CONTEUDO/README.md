@@ -1,1 +1,1 @@
-# Módulo 1 – Introdução à Estatística
+# Módulo 1 – Estatística Aplicada
