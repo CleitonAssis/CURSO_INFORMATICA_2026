@@ -1,0 +1,554 @@
+<!-- 
+    ========================================
+    AULA DIDÁTICA: HTML ESSENCIAL
+    ========================================
+    Arquivo: index.html
+    Descrição: Material de aprendizagem sobre fundamentos de HTML
+    Objetivo: Ensinar os conceitos básicos da linguagem de marcação
+    ========================================
+-->
+
+<!--
+    <!DOCTYPE html> declara que este é um documento HTML5.
+    Deve ser a primeira linha de um arquivo HTML.
+-->
+<!doctype html>
+
+<!--
+    Tag <html> é o elemento raiz que engloba todo o conteúdo HTML.
+    O atributo lang="pt-BR" define o idioma da página (português brasileiro).
+-->
+<html lang="pt-BR">
+  <!--
+    A seção <head> contém metadados e configurações da página.
+    O conteúdo aqui não é exibido na página, apenas processado pelo navegador.
+-->
+
+  <head>
+    <!--
+        Define a codificação de caracteres como UTF-8.
+        Permite que caracteres especiais e acentos sejam exibidos corretamente.
+    -->
+    <meta charset="UTF-8" />
+    <!--
+        Define a escala de visualização (viewport) para dispositivos móveis.
+        Garante que o site seja responsivo em smartphones e tablets.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+        A tag <title> define o título da página que aparece na aba do navegador.
+    -->
+    <title>Aula Didática - HTML Essencial</title>
+    <!--
+        A seção <style> contém CSS (Cascading Style Sheets).
+        CSS é usado para estilizar e formatar o conteúdo HTML.
+        Neste caso, usamos estilos internos para melhorar a aparência da página.
+    -->
+    <style>
+      /* 
+            O seletor universal (*) seleciona TODOS os elementos da página.
+            Aqui removemos margens e paddings padrão para ter controle total.
+        */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Estilos do elemento <body> - o corpo da página */
+      body {
+        /* Define a fonte utilizada em toda a página */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        /* Cria um gradiente roxo como fundo */
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Cor padrão do texto */
+        color: #333;
+        /* Espaço entre linhas para melhor legibilidade */
+        line-height: 1.6;
+        /* Altura mínima de 100% da janela de visualização */
+        min-height: 100vh;
+        /* Espaço interno (preenchimento) */
+        padding: 20px;
+      }
+
+      /* Estilos da classe .container - contém o conteúdo principal */
+      .container {
+        /* Largura máxima da página */
+        max-width: 900px;
+        /* Centraliza horizontalmente (margin auto) */
+        margin: 0 auto;
+        /* Fundo branco */
+        background-color: white;
+        /* Cantos arredondados */
+        border-radius: 10px;
+        /* Sombra para efeito de profundidade */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        /* Esconde conteúdo que ultrapassa as bordas */
+        overflow: hidden;
+      }
+
+      header {
+        background-color: #667eea;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 1.1em;
+        opacity: 0.9;
+      }
+
+      main {
+        padding: 30px;
+      }
+
+      section {
+        margin-bottom: 40px;
+        border-left: 4px solid #667eea;
+        padding-left: 20px;
+      }
+
+      section h2 {
+        color: #667eea;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+
+      section h3 {
+        color: #764ba2;
+        font-size: 1.3em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      p,
+      li {
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        color: #d63384;
+      }
+
+      .example {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 15px;
+        margin: 15px 0;
+        overflow-x: auto;
+      }
+
+      .example h4 {
+        color: #764ba2;
+        margin-bottom: 10px;
+      }
+
+      /* 
+            Estilo para blocos de código pré-formatado.
+            Usado para exibir exemplos de código HTML.
+        */
+      pre {
+        /* Fundo escuro para melhor legibilidade do código */
+        background-color: #2d2d2d;
+        /* Texto claro */
+        color: #f8f8f2;
+        padding: 15px;
+        border-radius: 6px;
+        /* Permite rolagem horizontal se o código for muito longo */
+        overflow-x: auto;
+        /* Fonte monoespacial adequada para código */
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+        line-height: 1.4;
+      }
+
+      ul,
+      ol {
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+
+      table th {
+        background-color: #667eea;
+        color: white;
+        padding: 12px;
+        text-align: left;
+      }
+
+      table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      footer {
+        background-color: #f0f0f0;
+        padding: 20px;
+        text-align: center;
+        color: #666;
+        border-top: 1px solid #ddd;
+      }
+
+      .highlight {
+        background-color: #fffacd;
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+
+  <!-- A tag <body> contém TODO o conteúdo visível da página.
+    Aqui vai tudo que o usuário vê no navegador. -->
+
+  <body>
+    <!-- Container (contêiner) agrupa todo o conteúdo principal -->
+    <div class="container">
+      <!--
+        CABEÇALHO (header)
+        A tag <header> define a seção de cabeçalho semântica da página.
+        Geralmente contém o logo, título e subtítulo.
+       -->
+      <header>
+        <h1>📚 Aula Didática: HTML Essencial</h1>
+        <p>Aprenda os fundamentos da Linguagem de Marcação para Web</p>
+      </header>
+
+      <!--
+        CONTEÚDO PRINCIPAL (main)
+        A tag <main> define a seção de conteúdo principal e único da página.
+        Deve haver apenas uma tag <main> por página.
+      -->
+      <main>
+        <!--
+            SEÇÃO 1: O QUE É HTML
+            A tag <section> agrupa conteúdo relacionado tematicamente.
+            Cada tópico da aula está em sua própria seção.
+        -->
+        <section>
+          <h2>1. O que é HTML?</h2>
+          <p>
+            <strong>HTML</strong> (HyperText Markup Language) é a linguagem
+            padrão para criar páginas web. HTML usa <code>tags</code> ou
+            <code>elementos</code> para estruturar o conteúdo de uma página.
+          </p>
+          <p>
+            Cada tag é delimitada por colchetes angulares e geralmente possui
+            uma tag de abertura e outra de fechamento.
+          </p>
+          <div class="example">
+            <h4>Exemplo de Estrutura Básica:</h4>
+            <pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="pt-BR"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8" /&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+                        &lt;title&gt;Título da Página&lt;/title&gt;
+                        &lt;style&gt;
+                            Estilos CSS internos podem ser adicionados aqui.
+                        &lt;/style&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Olá Mundo!&lt;/h1&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </pre>
+          </div>
+        </section>
+
+        <!--
+            SEÇÃO 2: ELEMENTOS DE TEXTO
+            Tipos diferentes de tags para estruturar texto.
+        -->
+        <section>
+          <h2>2. Elementos de Texto</h2>
+          <p>
+            HTML oferece vários elementos para estruturar o texto de forma
+            semântica:
+          </p>
+
+          <h3>Títulos (Headings)</h3>
+          <p>
+            Existem 6 níveis de títulos: <code>&lt;h1&gt;</code> até
+            <code>&lt;h6&gt;</code><br>
+            A hierarquia funciona assim:
+          </p>
+          <div class="example">
+            <h4>Exemplo:</h4>
+            <h1 style="margin-top: 10px; color: #333">Isso é um H1</h1>
+            <h2 style="margin-top: 10px; color: #333">Isso é um H2</h2>
+            <h3 style="margin-top: 10px; color: #333">Isso é um H3</h3>
+            <h4 style="margin-top: 10px; color: #333">Isso é um H4</h4>
+            <h5 style="margin-top: 10px; color: #333">Isso é um H5</h5>
+            <h6 style="margin-top: 10px; color: #333">Isso é um H6</h6>
+          </div>
+
+          <h3>Parágrafos e Formatação</h3>
+          <ul>
+            <li><code>&lt;p&gt;</code> - Define um parágrafo</li>
+            <li><code>&lt;strong&gt;</code> - Texto importante (negrito)</li>
+            <li><code>&lt;em&gt;</code> - Texto enfatizado (itálico)</li>
+            <li><code>&lt;br&gt;</code> - Quebra de linha</li>
+            <li><code>&lt;hr&gt;</code> - Linha horizontal</li>
+          </ul>
+        </section>
+
+        <!--
+            SEÇÃO 3: LISTAS
+            Exemplos de listas ordenadas e não-ordenadas em HTML.
+        -->
+        <section>
+          <h2>3. Listas</h2>
+
+          <h3>Listas Não-Ordenadas</h3>
+          <p>
+            Usam o elemento <code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code>:
+          </p>
+          <div class="example">
+            <h4>Exemplo:</h4>
+            <pre>
+                &lt;ul&gt;
+                    &lt;li&gt;Primeiro item&lt;/li&gt;
+                    &lt;li&gt;Segundo item&lt;/li&gt;
+                    &lt;li&gt;Terceiro item&lt;/li&gt;
+                &lt;/ul&gt;
+            </pre>
+          </div>
+
+          <h3>Listas Ordenadas</h3>
+          <p>
+            Usam o elemento <code>&lt;ol&gt;</code> e <code>&lt;li&gt;</code>:
+          </p>
+          <div class="example">
+            <h4>Exemplo:</h4>
+            <pre>
+                &lt;ol&gt;
+                    &lt;li&gt;Primeira etapa&lt;/li&gt;
+                    &lt;li&gt;Segunda etapa&lt;/li&gt;
+                    &lt;li&gt;Terceira etapa&lt;/li&gt;
+                &lt;/ol&gt;
+            </pre>
+          </div>
+        </section>
+
+        <!--
+            SEÇÃO 4: LINKS E IMAGENS
+            Aprenda a inserir hiperlinks e imagens em qual quer página HTML.
+        -->
+        <section>
+          <h2>4. Links e Imagens</h2>
+
+          <h3>Links</h3>
+          <p>
+            O elemento <code>&lt;a&gt;</code> cria links (âncoras) para outras
+            páginas:
+          </p>
+          <div class="example">
+            <h4>Exemplo:</h4>
+            <pre>
+                &lt;a href="https://www.google.com"&gt;Visite o Google&lt;/a&gt;
+            </pre>
+          </div>
+
+          <h3>Imagens</h3>
+          <p>O elemento <code>&lt;img&gt;</code> insere imagens na página:</p>
+          <div class="example">
+            <h4>Exemplo:</h4>
+            <pre>
+                &lt;img src="imagem.jpg" alt="Descrição da imagem" width="200"&gt;
+            </pre>
+          </div>
+        </section>
+
+        <!--
+            SEÇÃO 5: FORMULÁRIOS
+            Criação de formulários para captura de dados dos usuários.
+        -->
+        <section>
+          <h2>5. Formulários</h2>
+          <p>Formulários permitem que os usuários insiram dados:</p>
+          <div class="example">
+            <h4>Exemplo de Formulário:</h4>
+            <pre>
+                &lt;form&gt;
+                    &lt;label&gt;Nome:&lt;/label&gt;
+                    &lt;input type="text" name="nome"&gt;&lt;br&gt;&lt;br&gt;
+
+                    &lt;label&gt;Email:&lt;/label&gt;
+                    &lt;input type="email" name="email"&gt;&lt;br&gt;&lt;br&gt;
+
+                    &lt;label&gt;Mensagem:&lt;/label&gt;&lt;br&gt;
+                    &lt;textarea name="mensagem" rows="4" cols="50"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+
+                    &lt;input type="submit" value="Enviar"&gt;
+                &lt;/form&gt;
+            </pre>
+          </div>
+
+          <h3>Campos Comuns em Formulários:</h3>
+          <ul>
+            <li><code>&lt;label&gt;</code> - Etiqueta para o campo de entrada</li>
+            <li><code>&lt;input type="text"&gt;</code> - Campo de texto</li>
+            <li><code>&lt;input type="email"&gt;</code> - Campo de email</li>
+            <li><code>&lt;input type="password"&gt;</code> - Campo de senha</li>
+            <li><code>&lt;textarea&gt;</code> - Área de texto</li>
+            <li><code>&lt;select&gt;</code> - Lista suspensa</li>
+            <li><code>&lt;input type="submit"&gt;</code> - Botão de envio</li>
+            <li><code>&lt;input type="checkbox"&gt;</code> - Caixa de seleção</li>
+          </ul>
+        </section>
+
+        <!--
+            SEÇÃO 6: TABELAS
+            Estruturação de dados tabulares usando as tags corretas.
+        -->
+        <section>
+          <h2>6. Tabelas</h2>
+          <p>As tabelas são usadas para exibir dados em linhas e colunas:</p>
+          <div class="example">
+            <h4>Exemplo de Tabela:</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Tag</th>
+                  <th>Descrição</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;table&gt;</td>
+                  <td>Define a tabela</td>
+                </tr>
+                <tr>
+                  <td>&lt;tr&gt;</td>
+                  <td>Define uma linha</td>
+                </tr>
+                <tr>
+                  <td>&lt;th&gt;</td>
+                  <td>Define um cabeçalho</td>
+                </tr>
+                <tr>
+                  <td>&lt;td&gt;</td>
+                  <td>Define uma célula de dados</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!--
+            SEÇÃO 7: TAGS SEMÂNTICAS MODERNAS
+            Tags HTML5 que têm significado semântico real para melhor estrutura.
+        -->
+        <section>
+          <h2>7. Tags Semânticas Modernas</h2>
+          <p>
+            HTML5 introduziu tags semânticas que melhor descrevem o conteúdo:
+          </p>
+          <ul>
+            <li><code>&lt;header&gt;</code> - Cabeçalho da página</li>
+            <li><code>&lt;nav&gt;</code> - Navegação</li>
+            <li><code>&lt;main&gt;</code> - Conteúdo principal</li>
+            <li><code>&lt;section&gt;</code> - Seção temática</li>
+            <li><code>&lt;article&gt;</code> - Artigo independente</li>
+            <li><code>&lt;aside&gt;</code> - Conteúdo lateral</li>
+            <li><code>&lt;footer&gt;</code> - Rodapé da página</li>
+          </ul>
+        </section>
+
+        <!--
+            SEÇÃO 8: ATRIBUTOS GLOBAIS
+            Atributos que podem ser usados em praticamente qualquer tag HTML.
+        -->
+        <section>
+          <h2>8. Atributos Globais Importantes</h2>
+          <p>Estes atributos podem ser usados em quase todas as tags:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Atributo</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>id</code></td>
+                <td>Identificador único do elemento</td>
+              </tr>
+              <tr>
+                <td><code>class</code></td>
+                <td>Classe para aplicar estilos CSS</td>
+              </tr>
+              <tr>
+                <td><code>style</code></td>
+                <td>Estilos CSS inline</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td>Tooltip ao passar o mouse</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!--
+            SEÇÃO 9: BOAS PRÁTICAS
+            Dicas importantes para escrever HTML correto e profissional.
+        -->
+        <section>
+          <h2>9. Boas Práticas</h2>
+          <ul>
+            <li>✓ Sempre use <code>&lt;!DOCTYPE html&gt;</code> no início</li>
+            <li>✓ Sempre feche as tags corretamente</li>
+            <li>✓ Use HTML semântico para melhor acessibilidade</li>
+            <li>
+              ✓ Ajude a acessibilidade com atributos <code>alt</code> em imagens
+            </li>
+            <li>✓ Mantenha o código indentado e organizado</li>
+            <li>✓ Use nomes descritivos para IDs e classes</li>
+            <li>✗ Não aninhe tags de forma incorreta</li>
+            <li>✗ Não use HTML inline para estilo, use CSS sempre que puder.</li>
+          </ul>
+        </section>
+      </main>
+
+      <!--
+        RODAPÉ (footer)
+        A tag <footer> define a seção de rodapé semântica da página.
+        Geralmente contém informações de copyright, links legais, etc.
+       -->
+      <footer>
+        <p>
+          Cleiton Assis&copy; 2026 - Aula Didática de HTML | Curso Técnico em Informática -
+          Módulo II
+        </p>
+        <p>Desenvolvimento Web- HTML Essencial</p>
+      </footer>
+    </div>
+  </body>
+</html>
