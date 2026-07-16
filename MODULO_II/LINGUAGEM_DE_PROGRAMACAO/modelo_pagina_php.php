@@ -344,7 +344,7 @@
                             <tr>
                                 <td>**</td>
                                 <td>Potência</td>
-                                <td>2 ** 3 = 8</td>
+                                <td>2 ** 3 = 8 ou pow()</td>
                             </tr>
                         </tbody>
                     </table>
