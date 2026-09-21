@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso de Informática - Aula de Desenvolvimento Web</title>
+    <!-- <link rel="stylesheet" href="css/estilo.css" /> -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="experiencia.html">Experiência</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Bem-vindo ao meu Currículo</h1>
+      <p>Me chamo Cleiton, sou proativo e dedicado.</p>
+
+      <section>
+        <h2>Sobre Mim</h2>
+        <p>
+          Um desenvolvedor web apaixonado por criar experiências digitais
+          incríveis.
+        </p>
+      </section>
+
+      <section>
+        <h2>Habilidades</h2>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Bootstrap</li>
+          <li>jQuery</li>
+          <li>PHP</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>
+        &copy; 2026 Curso de Informática - Prof. Cleiton Assis. Todos os
+        direitos reservados.
+      </p>
+    </footer>
+
+    <script>
+      // Exemplo de validação simples do formulário
+      const form = document.querySelector("form"); // Seleciona o formulário
+      form.addEventListener("submit", function (event) {
+        // Adiciona um ouvinte de evento para o envio do formulário
+        const nome = document.getElementById("nome").value; // Obtém o valor do campo de nome
+        const email = document.getElementById("email").value; // Obtém o valor do campo de email
+
+        if (!nome || !email) {
+          // Verifica se algum dos campos está vazio
+          alert("Por favor, preencha todos os campos."); // Exibe um alerta solicitando que todos os campos sejam preenchidos
+          event.preventDefault(); // Impede o envio do formulário
+        } else {
+          alert(
+            "Nome: " +
+              nome +
+              "\nEmail: " +
+              email +
+              "\nFormulário enviado com sucesso!",
+          ); // Exibe um alerta com os valores preenchidos e uma mensagem de sucesso
+          nome.value = ""; // Limpa o campo de nome
+          email.value = ""; // Limpa o campo de email
+          //form.reset(); // Reseta o formulário
+        }
+      });
+    </script>
+  </body>
+  <!-- 
+Exercício Prático – Criando um Currículo com HTML Semântico
+
+Você deverá desenvolver uma página HTML que apresente seu currículo profissional.
+A página deverá conter informações como:
+
+Seu nome e uma breve apresentação;
+Informações sobre você;
+Suas habilidades;
+
+Requisitos da página
+O documento deverá possuir uma estrutura HTML5 completa, incluindo:
+
+<!DOCTYPE html>;
+<html>;
+<head>;
+<body>.
+<header>
+<nav>.
+<ul>.
+<main>.
+<section>.
+<footer>.
+--></html>

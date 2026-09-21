@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* Reset CSS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+  .navbar li {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Estilos gerais */
+body {
+  font-family: "Lobster Two", sans-serif;
+}
+
+/* Estilos para o cabeçalho e navegação */
+.navbar {
+  padding: 30px;
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  background-color: #333333;
+  color: #ffffff;
+  border: #ffffff 1px solid;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.navbar a:hover {
+  color: #333333;
+  background-color: #ffffff;
+}
+
+.btn {
+  background-color: #333333;
+  color: #ffffff;
+  border: #ffffff 1px solid;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #333333;
+  background-color: #ffffff;
+  border: #333333 1px solid;
+  font-weight: bold;
+}
+
+/* Estilos para o conteúdo principal */
+main {
+  padding: 2rem;
+}
+
+/* Estilos para as seções */
+section {
+  padding: 1rem;
+}
+
+/* Estilos para o formulário de contato */
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para o rodapé */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
